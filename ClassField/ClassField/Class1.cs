@@ -93,15 +93,5 @@ namespace ClassField
         /// </summary>
         Difficulty,
     }
-
-
-
-
-
-
-
-
-
-
 }
-}
+

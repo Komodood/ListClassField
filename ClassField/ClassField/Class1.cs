@@ -31,6 +31,10 @@ namespace ClassField
         /// Дата проведения
         /// </summary>
         public DateTime DateCompetition { get; set; }
+        /// <summary>
+        /// Название блоков жюри, которые учавствовали в оценивании
+        /// </summary>
+        public Blockjury NameJury { get; set; }
     }
     /// <summary>
     /// Жюри
@@ -73,6 +77,10 @@ namespace ClassField
         /// Фотография участника
         /// </summary>
         public byte[] Photo { get; set; }
+        /// <summary>
+        /// Название блоков жюри, которые учавствовали в оценивании по определенным категориям
+        /// </summary>
+        public Blockjury NameJury { get; set; }
     }
     /// <summary>
     /// Категории оценивания

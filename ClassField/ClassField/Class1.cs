@@ -33,11 +33,10 @@ namespace ClassField
         public DateTime DateCompetition { get; set; }
     }
     /// <summary>
-    /// Дата проведения
+    /// Жюри
     /// </summary>
     public class Blockjury
     {
-        //Не думаю, что нужен отдельный класс для жюри
         /// <summary>
         /// Имена членов жюри
         /// </summary>
@@ -94,4 +93,3 @@ namespace ClassField
         Difficulty,
     }
 }
-

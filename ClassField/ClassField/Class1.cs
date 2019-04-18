@@ -46,9 +46,9 @@ namespace ClassField
         /// </summary>
         public List<string> ListJury { get; set; }
         /// <summary>
-        /// Категория оценивания
+        /// Название блока Жюри
         /// </summary>
-        public CategoryScore CategoryScore { get; set; }
+        public string NameJury { get; set; }
         /// <summary>
         /// Фотография Главного члена жюри
         /// </summary>
@@ -68,7 +68,8 @@ namespace ClassField
         /// <summary>
         /// Оценка за категорию
         /// </summary>
-        public double Score { get; set; }
+        public double Score1 { get; set; }
+        public double Score2 { get; set; }
         /// <summary>
         /// Общий балл нескольких категорий
         /// </summary>

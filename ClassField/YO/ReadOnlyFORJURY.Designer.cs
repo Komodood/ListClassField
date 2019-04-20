@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReadOnlyFORJURY));
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label22 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -42,12 +41,13 @@
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(131, 44);
-            this.textBox2.MaximumSize = new System.Drawing.Size(150, 1000);
+            this.textBox2.MaximumSize = new System.Drawing.Size(300, 1000);
+            this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
             this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(150, 20);
+            this.textBox2.Size = new System.Drawing.Size(158, 236);
             this.textBox2.TabIndex = 56;
-            this.textBox2.Text = "11111111111111111111111111111111";
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // textBox1
             // 
@@ -56,16 +56,6 @@
             this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(158, 20);
             this.textBox1.TabIndex = 55;
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(12, 73);
-            this.label22.MaximumSize = new System.Drawing.Size(100, 1000);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(87, 39);
-            this.label22.TabIndex = 54;
-            this.label22.Text = "Фото главного члена жюри из блока";
             // 
             // label20
             // 
@@ -120,7 +110,6 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label22);
             this.Controls.Add(this.label20);
             this.Controls.Add(this.label21);
             this.Name = "ReadOnlyFORJURY";
@@ -135,7 +124,6 @@
         #endregion
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.PictureBox pictureBox1;

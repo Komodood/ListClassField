@@ -81,7 +81,7 @@ namespace ClassField
         /// <summary>
         /// Название блоков жюри, которые учавствовали в оценивании по определенным категориям
         /// </summary>
-        public Blockjury NameJury { get; set; }
+        public string NameJury { get; set; }
     }
     /// <summary>
     /// Категории оценивания

@@ -34,7 +34,11 @@ namespace ClassField
         /// <summary>
         /// Название блоков жюри, которые учавствовали в оценивании
         /// </summary>
-        public Blockjury NameJury { get; set; }
+        public List<Blockjury> NameJury { get; set; }
+        /// <summary>
+        /// Город проведения
+        /// </summary>
+        public string CityofComp { get; set; }
     }
     /// <summary>
     /// Жюри

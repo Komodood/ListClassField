@@ -49,6 +49,9 @@ namespace YO
             }
         }
 
-        
+        private void Form3_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

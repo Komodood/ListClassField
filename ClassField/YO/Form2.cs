@@ -36,6 +36,7 @@ namespace YO
             NameSpace.CategoryCompetition = Data2 = textBox3.Text;
             NameSpace.AgeСategory = Data3 = textBox2.Text;
             Data4 = textBox4.Text;
+            Form1.Date = dateTimePicker1.Value;
             Data5 = dateTimePicker1.Value.ToString("dd/MM/yyyy");
             DialogResult = DialogResult.OK;
         }

@@ -9,14 +9,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Serialization;
 using ClassField;
 
 namespace YO
 {
     public partial class Form1 : Form
     {
-         
 
+        public static DateTime Date { get; set; }
         public Form1()
         {
             InitializeComponent();
@@ -100,9 +101,9 @@ namespace YO
             }
         }
 
-        
 
-        
+
+
 
         private void button4_Click(object sender, EventArgs e)
         {
@@ -143,6 +144,53 @@ namespace YO
                     listBox2.Items.Remove(item);
                     listBox2.Items.Insert(index, item);
                 }
+            }
+        }
+
+        private void сохранитьКакToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var sfd = new SaveFileDialog() { Filter = "Таблица|*.ResultTable" };
+            if (sfd.ShowDialog(this) != DialogResult.OK)
+                return;
+            var ReTab = new TableOfResult()
+            {
+                Competitions = label2.Text,
+                CategoryCompetition = label3.Text,
+                AgeСategory = label4.Text,
+                CityofComp = label8.Text,
+                DateCompetition = Date,
+                NameJury = listBox2.Items.OfType<Blockjury>().ToList(),
+                ListCompetitors = listBox1.Items.OfType<Competitor>().ToList(),
+            };
+            var xs = new XmlSerializer(typeof(TableOfResult));
+            var file = File.Create(sfd.FileName);
+            xs.Serialize(file, ReTab);
+            file.Close();
+        }
+
+        private void загрузитьФайлToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var ofd = new OpenFileDialog() { Filter = "Таблица|*.ResultTable" };
+            if (ofd.ShowDialog(this) != DialogResult.OK)
+                return;
+            var xs = new XmlSerializer(typeof(TableOfResult));
+            var file = File.OpenRead(ofd.FileName);
+            var ReTab = (TableOfResult)xs.Deserialize(file);
+            file.Close();
+            label2.Text = ReTab.Competitions;
+            label3.Text = ReTab.CategoryCompetition;
+            label4.Text = ReTab.AgeСategory;
+            label8.Text = ReTab.CityofComp;
+            label9.Text = ReTab.DateCompetition.ToLongDateString();
+            listBox1.Items.Clear();
+            listBox2.Items.Clear();
+            foreach (var Competitor in ReTab.ListCompetitors)
+            {
+                listBox1.Items.Add(Competitor);
+            }
+            foreach (var Jury in ReTab.NameJury)
+            {
+                listBox2.Items.Add(Jury);
             }
         }
     }

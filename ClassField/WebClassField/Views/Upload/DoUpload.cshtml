@@ -1,4 +1,5 @@
-﻿@model ClassField.TableOfResult
+﻿@using WebClassField.Controllers
+@model ClassField.TableOfResult
 
 @{
     ViewBag.Title = "Таблица жюри" + Model.Competitions;
@@ -20,9 +21,10 @@
     </thead>
     @foreach (var sm in Model.NameJury)
     {
-        <tr>
-            <td>@sm.NameJury</td>
-            <td>@sm.Photo</td>
-        </tr>
+    <tr>
+        <td>@sm.NameJury</td>
+        <td>@UploadController.ToStringJury(sm.ListJury)</td>
+        <td>@sm.Photo</td>
+    </tr>
     }
 </table>

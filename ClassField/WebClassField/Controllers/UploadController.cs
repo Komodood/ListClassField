@@ -18,12 +18,14 @@ namespace WebClassField.Controllers
 {
     public class UploadController : Controller
     {
-        public string String(List<string> Block)
+        public static string ToStringJury(List<string> juri)
         {
+
             string stroka = "";
-            foreach (var e in Block)
+            foreach (var e in juri)
             {
                 stroka = stroka + e;
+                stroka += ", ";
             }
 
             return stroka;

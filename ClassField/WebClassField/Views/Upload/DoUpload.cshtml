@@ -1,0 +1,31 @@
+﻿@model ClassField.TableOfResult
+
+@{
+    ViewBag.Title = "Таблица результатов(или жюри?) " + Model.Competitions;
+    Layout = "_Layout";
+}
+
+<h2>Таблица @Model.Competitions</h2>
+
+@Model.CategoryCompetition
+@Model.DateCompetition  
+
+<table class="table table-bordered table-responsive table-hover">
+    <thead>
+        <tr>
+            <td>Плановый сервис</td>
+            <td>Дата</td>
+            <td>СТО</td>
+            <td>Описание</td>
+            <td>Следующее ТО</td>
+        </tr>
+    </thead>
+    @foreach (var sm in Model.NameJury)
+    {
+        <tr>
+            <td>@sm.NameJury</td>
+            <td>@sm.ListJury</td>
+            <td>@sm.Photo</td>
+        </tr>
+    }
+</table>

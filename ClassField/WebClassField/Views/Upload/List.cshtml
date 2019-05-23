@@ -1,0 +1,46 @@
+﻿@model System.Collections.Generic.List<WebClassField.Models.DataAccessPostgreSqlProvider.DbTableOfResult>
+
+@{
+    ViewBag.Title = "Список участников и их результаты";
+    Layout = "_Layout";
+}
+
+<h2>@ViewBag.Title</h2>
+
+@foreach (var Table in Model)
+{
+<div>
+    @Table.Competitions
+    @Table.CategoryCompetition
+    @Table.AgeСategory
+    @Table.CityofComp
+    @Table.DateCompetition
+
+    <img src="Image?id=@Table.Id" />
+
+    <table class="table table-bordered table-responsive table-hover">
+        <thead>
+            <tr>
+                <td>Id</td>
+                <td>Экипаж</td>
+                <td>Откуда</td>
+                <td>Куда</td>
+                <td>Пассажиры</td>
+            </tr>
+        </thead>
+        @if (Table.ListCompetitors != null)
+        {
+            foreach (var sm in Table.ListCompetitors)
+            {
+                <tr>
+                    <td>@sm.Id</td>
+                    <td>@sm.Name</td>
+                    <td>@sm.Score1</td>
+                    <td>@sm.Score2</td>
+                    <td>@sm.AllScore</td>
+                </tr>
+            }
+        }
+    </table>
+</div>
+}

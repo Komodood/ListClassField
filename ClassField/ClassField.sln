@@ -7,6 +7,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassField", "ClassField\Cl
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YO", "YO\YO.csproj", "{3BAE2FFD-AF86-406B-B64B-5846394FB6C4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebClassField", "WebClassField\WebClassField.csproj", "{74F9A5AD-55DF-490E-B655-47F4FB5241AC}"
+	ProjectSection(ProjectDependencies) = postProject
+		{592F8146-225E-4D25-AB24-DC52ADF6CD56} = {592F8146-225E-4D25-AB24-DC52ADF6CD56}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +26,10 @@ Global
 		{3BAE2FFD-AF86-406B-B64B-5846394FB6C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3BAE2FFD-AF86-406B-B64B-5846394FB6C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3BAE2FFD-AF86-406B-B64B-5846394FB6C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{74F9A5AD-55DF-490E-B655-47F4FB5241AC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74F9A5AD-55DF-490E-B655-47F4FB5241AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74F9A5AD-55DF-490E-B655-47F4FB5241AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74F9A5AD-55DF-490E-B655-47F4FB5241AC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

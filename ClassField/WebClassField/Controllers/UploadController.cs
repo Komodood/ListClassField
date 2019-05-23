@@ -18,7 +18,17 @@ namespace WebClassField.Controllers
 {
     public class UploadController : Controller
     {
-        public IActionResult Index()
+        public string String(List<string> Block)
+        {
+            string stroka = "";
+            foreach (var e in Block)
+            {
+                stroka = stroka + e;
+            }
+
+            return stroka;
+        }
+            public IActionResult Index()
         {
             return View();
         }
@@ -63,14 +73,7 @@ namespace WebClassField.Controllers
             }
         }
 
-        //public ActionResult Image(int id)
-        //{
-        //    using (var db = new WebClassFielddbContext())
-        //    {
-        //        return base.File(db.TableOfResult.Find(id).Photo, "image/jpeg");
-        //    }
-        //}
-
+ 
         public ActionResult List()
         {
             List<DbTableOfResult> list;

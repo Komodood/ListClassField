@@ -1,7 +1,7 @@
 ﻿@model ClassField.TableOfResult
 
 @{
-    ViewBag.Title = "Таблица результатов(или жюри?) " + Model.Competitions;
+    ViewBag.Title = "Таблица жюри" + Model.Competitions;
     Layout = "_Layout";
 }
 
@@ -13,7 +13,7 @@
 <table class="table table-bordered table-responsive table-hover">
     <thead>
         <tr>
-            <td>Имя жюри</td>
+            <td>Название жюри</td>
             <td>Имена жюри</td>
             
         </tr>
@@ -22,7 +22,6 @@
     {
         <tr>
             <td>@sm.NameJury</td>
-            <td>@sm.ListJury</td>
             <td>@sm.Photo</td>
         </tr>
     }

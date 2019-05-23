@@ -1,7 +1,7 @@
 ﻿@model System.Collections.Generic.List<WebClassField.Models.DataAccessPostgreSqlProvider.DbTableOfResult>
 
 @{
-    ViewBag.Title = "Список участников и их результаты";
+    ViewBag.Title = "Список участников и их результаты по каждому соревнованию";
     Layout = "_Layout";
 }
 
@@ -16,7 +16,6 @@
     @Table.CityofComp
     @Table.DateCompetition
 
-    <img src="Image?id=@Table.Id" />
 
     <table class="table table-bordered table-responsive table-hover">
         <thead>
@@ -33,6 +32,7 @@
             foreach (var sm in Table.ListCompetitors)
             {
                 <tr>
+                    @*<td><img src="Image?id=@sm.Id" /></td>*@
                     <td>@sm.Id</td>
                     <td>@sm.Name</td>
                     <td>@sm.Score1</td>
